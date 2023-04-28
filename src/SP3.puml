@@ -1,0 +1,77 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Film {
+ -title: String
+ -year: int
+ -rating: int
+ -category: String
+ +getTitle(): return String
+ +getYear(): return int
+ +getRating(): return int
+ +getCategory(): return String
+
+
+}
+
+
+class Series {
+ -title: String
+ -year: int
+ -rating: int
+ -category: String
+ -seasons: List<Season>
+ +getTitle(): return String
+ +getYear(): return int
+ +getRating(): return int
+ +getCategory(): return String
+ +getType(): return String
+ +getSeasons(): List<Season>
+}
+
+
+class User {
+ -username: String
+ -password: String
+ -watchedFilms: List<Film>
+ -savedFilms: List<Film>
+ +getUsername(): return String
+ +getPassword(): return String
+ +getWatchedFilm(): List<Film>
+ +getSavedFilm(): List<Film>
+ +addToSaved(film:Film): void
+ +addToWatched(film:Film): void
+ }
+
+
+class Season {
+ -number: int
+ -episodes: List<Film>
+ +Season(number: int, episodes: List<Film>)
+ +getNumber(): return int
+ +getEpisodes(): List<Film>
+}
+
+
+class System {
+ -users: List<User>
+ -films: List<Film>
+ -series: List<Series>
+ +createUser(username: String, password: String): void
+ +getUser(username: String): User
+ +addFilm(title: String, year: int, rating: int, category: String, type: String): void
+ +getFilmInCategory(category: String): List<Film>
+ +getFilm(title: String): return Film
+ +addSeries(title: String, year: int, rating: int, category: String, type: String, seasons: List<Season>): void
+ +getSeries(title: String): return Series
+}
+System --> User
+System --> Film
+System --> Series
+User --> Film
+User --> Film
+Season --> Film
+Series --> Season
+
+
+@enduml
