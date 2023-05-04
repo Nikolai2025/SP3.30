@@ -2,10 +2,10 @@ public interface media {
     public  String getTitle();
 
 
-    public int getReleaseDate();
+    public String getReleaseDate();
 
 
-    public int getRating();
+    public String getRating();
 
 
     public String getCategory();
