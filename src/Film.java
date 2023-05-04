@@ -1,13 +1,13 @@
 public class Film implements media {
     private String title;
 
-    private int releaseDate;
+    private String releaseDate;
 
-    private int rating;
+    private String rating;
 
     private String category;
 
-    public Film(String title, int releaseDate, int rating, String category) {
+    public Film(String title, String releaseDate, String rating, String category) {
         this.title = title;
         this.releaseDate = releaseDate;
         this.rating = rating;
@@ -21,11 +21,11 @@ public class Film implements media {
 
 
 
-    public int getReleaseDate() {
+    public String getReleaseDate() {
         return getReleaseDate();
     }
 
-    public int getRating() {
+    public String getRating() {
         return getRating();
     }
 
